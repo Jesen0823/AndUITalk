@@ -7,3 +7,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndUITalk"
 include ':app'
+include ':paint_xfermode'
+include ':paint_colorfilter'
