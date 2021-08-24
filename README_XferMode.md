@@ -2,55 +2,42 @@
 
 ### XferMode相关
 
-1. 概述：
-    PorterDuff. Mode 将所绘制图形的像素与Canvas中对应位置的像素按照一定规则进行合，形成新的像素值，从而更新Canvas中最终的像素颜色值。
+1. 概述： PorterDuff. Mode
+   将所绘制图形的像素与Canvas中对应位置的像素按照一定规则进行合，形成新的像素值，从而更新Canvas中最终的像素颜色值。
 
-    共有18种模式：
+   共有18种模式：
 
-    Mode.CLEAR
-    Mode.SRC_OVER
-    Mode.DST_IN
-    Mode.SRC_ATOP
-    Mode.DARKEN
-    Mode.SCREEN
-    Mode.SRC
-    Mode.DST_OVER
-    Mode.SRC_OUT
-    Mode.DST_ATOP
-    Mode.LIGHTEN
-    Mode.OVERLAY
-    Mode.DST
-    Mode.SRC_IN
-    Mode.DST_OUT
-    Mode.XOR
-    Mode.MULTIPLY
-    Mode.ADD
+   Mode.CLEAR Mode.SRC_OVER Mode.DST_IN Mode.SRC_ATOP Mode.DARKEN
+   Mode.SCREEN Mode.SRC Mode.DST_OVER Mode.SRC_OUT Mode.DST_ATOP
+   Mode.LIGHTEN Mode.OVERLAY Mode.DST Mode.SRC_IN Mode.DST_OUT Mode.XOR
+   Mode.MULTIPLY Mode.ADD
 
 
 2. 离屏绘制
-    通过使用离屏缓冲，把要绘制的内容单独绘制在缓冲层，保证Xfermode的使用不会出现错误的结果。使用离屏缓冲有两种方式:
+   通过使用离屏缓冲，把要绘制的内容单独绘制在缓冲层，保证Xfermode的使用不会出现错误的结果。使用离屏缓冲有两种方式:
 
-    * Canvas.saveLayer()可以做短时的离屏缓冲，在绘制之前保存，绘制之后恢复restoreToCount:
-       ```java
-       int saveld=canvas. save Layer(0, 0,width,height, Canvas.ALL_SAVE_FLAG);
+   * Canvas.saveLayer()可以做短时的离屏缓冲，在绘制之前保存，绘制之后恢复restoreToCount:
 
-       Canvas.drawBitmap(rectBitmap, 0, 0, paint);//画方
-       Paint.setXfermode(xfermode);//设置Xferm,
-       Canvas.drawBitmap(circleBitmap, 0, 0, paint);//画圆
-       Paint.setXfermode(null); //用完及时清除Xfermode
-       
-       canvas.restoreToCount(saveld);
-       ```
+     ```java
+     int saveld=canvas. save Layer(0, 0,width,height, Canvas.ALL_SAVE_FLAG);
 
-    * View.setLayerType() //直接把整个View都绘制在离屏缓冲中。
-       setLayerType(LAYER_ TYPE_HARDWARE) 使用GPU来缓冲，
-       setLayerType(LAYER_ TYPE_SOFTWARE)  使用一个Bitmap来缓冲。
+     Canvas.drawBitmap(rectBitmap, 0, 0, paint);//画方
+     Paint.setXfermode(xfermode);//设置Xferm,
+     Canvas.drawBitmap(circleBitmap, 0, 0, paint);//画圆
+     Paint.setXfermode(null); //用完及时清除Xfermode
+
+     canvas.restoreToCount(saveld);
+     ```
+
+   * View.setLayerType() //直接把整个View都绘制在离屏缓冲中。
+     setLayerType(LAYER_ TYPE_HARDWARE) 使用GPU来缓冲，
+     setLayerType(LAYER_ TYPE_SOFTWARE) 使用一个Bitmap来缓冲。
 
 
-3. 演示效果
- ![xfermode](./images/README_XferMode-1629819356324.png)
+3. 演示效果 ![xfermode](./images/README_XferMode-1629819356324.png)
 
 > 模式说明：
+
 ```
 //效果作用于src源图像区域
         private static final Xfermode[] sModes = {
@@ -143,3 +130,4 @@
             }
         }
 ```
+
