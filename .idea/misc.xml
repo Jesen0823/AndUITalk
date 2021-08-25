@@ -5,13 +5,14 @@
       <map>
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/canvas_api/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/event_talk/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/paint_colorfilter/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/paint_xfermode/src/main/res/layout/activity_main.xml" value="0.1347517730496454" />
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/path_basi/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
