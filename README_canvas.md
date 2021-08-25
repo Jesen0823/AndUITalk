@@ -129,4 +129,27 @@
         mPaint.setColor(Color.GRAY);
         canvas.drawRect(0,0,700,700, mPaint);
    ```
+#### 1. **状态的保存**
+
+##### 画布的常用状态保存
+
+>  **int state = canvas.save();** //保存状态1  
+>  Log.e("TAG", "onDraw: " + canvas.getSaveCount());  
+>  canvas.translate(70, 50);  
+>  canvas.drawRect(0, o, 400,400, mPaint);  
+>  **canvas.save();**  //保存状态2  
+>  **canvas.restore()**; //返回最新状态(状态2)  
+>  Log.e("TAG", "onDraw: " +canvas.getSaveCount());  
+>  mPaint.setColor(Color.BLUE);  
+>  canvas.drawRect(0, 0,400,400, mPaint);
+>  **canvas.restoreToCount(state);** //手动指定的返回到状态1
+
+
+* 概 述
+
+  > canvas内部对于状态的保存是存放在栈中的
+  > 可以多次调用save保存canvas的状态，并且可以通过getSaveCount方法获取保存的状态个数
+  > 可以通过restore方法返回最近一次save前的状态，也可以通过restoreToCount返回指定save状态。指定save状态之后的状态全部被清除
+  > saveLayer可以创建新的图层，之后的绘制都会在这个图层之上绘制，直到调用restore方法
+  > 绘制的坐标系不能超过图层的范围， saveLayerAlpha对图层增加了透明度信息
 
