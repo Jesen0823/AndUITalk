@@ -52,7 +52,7 @@ mPaint = new Paint();
 
 2. 文字属性
 
-   ![文字](./images/README2-1629805000473.png)
+   ![文字](./images/README2-1629805000473.webp)
 
 3. Paint颜色相关
 
@@ -230,11 +230,11 @@ mPaint = new Paint();
            canvas.drawBitmap(mBitmap,100,0, mPaint);
        ```
 
-       效果如下： ![滤镜效果](./images/README_Paint-1629819196181.png)
+       效果如下： ![滤镜效果](./images/README_Paint-1629819196181.webp)
 
 
 4. 颜色矩阵 [参考：](https://toutiao.io/posts/ucufsw/preview)
    [参考博客](https://toutiao.io/posts/ut34qc/preview)
 
-   ![QQ截图20210824224648.png](./images/README_Paint-1629816441112.png)
+   ![QQ截图20210824224648.webp](./images/README_Paint-1629816441112.webp)
 

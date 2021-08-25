@@ -30,7 +30,7 @@
     mPaint.setColor(Color.BLUE);
     canvas.drawRect(0,0, 400, 400, mPaint);
 ```
-   ![画布平移前后](./images/README_canvas-1629826238273.png)
+   ![画布平移前后](./images/README_canvas-1629826238273.webp)
 
 
     **缩放操作**
@@ -47,7 +47,7 @@
     mPaint.setColor(Color.GRAY);
     canvas.drawLine(0,0, 400, 600, mPaint);
 ```
-![缩放的同时平移](./images/README_canvas-1629827338494.png)
+![缩放的同时平移](./images/README_canvas-1629827338494.webp)
 
     **倾斜操作**
     *void skew(float sx, float sy):*
@@ -64,7 +64,7 @@
         mPaint.setColor(Color.GRAY);
         canvas.drawLine(0,0, 400, 600, mPaint);
    ```
-   ![沿x轴斜切30°](./images/README_canvas-1629831639246.png)
+   ![沿x轴斜切30°](./images/README_canvas-1629831639246.webp)
 
 
     **旋转操作**
@@ -81,7 +81,7 @@
         mPaint.setColor(Color.GRAY);
         canvas.drawLine(0,0, 400, 600, mPaint);
   ```
-  ![rotation](./images/README_canvas-1629828399593.png)  
+  ![rotation](./images/README_canvas-1629828399593.webp)  
   按指定旋转中心旋转：
   ```java
     canvas.translate(100, 100);
@@ -94,7 +94,7 @@
     mPaint.setColor(Color.GRAY);
     canvas.drawLine(0,0, 400, 600, mPaint);
   ```
-  ![指定中心旋转](./images/README_canvas-1629829752872.png)
+  ![指定中心旋转](./images/README_canvas-1629829752872.webp)
 
 
     **切割操作，参数指定区域内可以继续绘制**
@@ -114,8 +114,8 @@
         canvas.drawCircle(100,100,100,mPaint); //坐标区域在裁剪范围内，绘制成功
         canvas.drawCircle(300, 300, 100, mPaint);//坐标超出裁剪区域，无法绘制
    ```
-   ![clipRect裁剪掉矩形外的区域](./images/README_canvas-1629834026237.png)
-   ![clipOutRect裁剪掉矩形内区域](./images/README_canvas-1629834456450.png)
+   ![clipRect裁剪掉矩形外的区域](./images/README_canvas-1629834026237.webp)
+   ![clipOutRect裁剪掉矩形内区域](./images/README_canvas-1629834456450.webp)
 
     **可通过matrix实现平移，缩放，旋转等操作**
     *void setMatrix(Matrix matrix):*

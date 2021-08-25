@@ -4,13 +4,13 @@ android UI的总结
 
 ### 布局文件加载
 
-![布局文件加载流程.png](./images/README-1629794485830.png)
+![布局文件加载流程.webp](./images/README-1629794485830.webp)
 
-![流程说明](./images/README-1629794603062.png)
+![流程说明](./images/README-1629794603062.webp)
 
-![View绘制流程](./images/README-1629794765987.png)
+![View绘制流程](./images/README-1629794765987.webp)
 
-![View绘制详细流程](./images/README-1629794928964.png)
+![View绘制详细流程](./images/README-1629794928964.webp)
 
     View测量 = 模式 + 尺寸 -> MeasureSpec(32位int值)
 
@@ -51,7 +51,7 @@ android UI的总结
   * LayoutParams.WRAP_CONTENT:最大模式，最大为窗口大小
   * 固定大小：精确模式，大小为LayoutParams的大小
 
-![FrameLayout测量过程](./images/README-1629797958433.png)
+![FrameLayout测量过程](./images/README-1629797958433.webp)
 
     获取子View测量空间：
 
@@ -125,11 +125,11 @@ public static int getChildMeasureSpec(int spec, int padding, int childDimension)
     
 ```
 
-* 测量参数关系 ![测量参数](./images/README-1629799234789.png)
+* 测量参数关系 ![测量参数](./images/README-1629799234789.webp)
 
-* View的布局 ![布局](./images/README-1629799951010.png)
+* View的布局 ![布局](./images/README-1629799951010.webp)
 
-* View的绘制 ![绘制](./images/README-1629800163529.png)
+* View的绘制 ![绘制](./images/README-1629800163529.webp)
 
 ---
 

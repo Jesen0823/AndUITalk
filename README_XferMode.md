@@ -34,7 +34,7 @@
      setLayerType(LAYER_ TYPE_SOFTWARE) 使用一个Bitmap来缓冲。
 
 
-3. 演示效果 ![xfermode](./images/README_XferMode-1629819356324.png)
+3. 演示效果 ![xfermode](./images/README_XferMode-1629819356324.webp)
 
 > 模式说明：
 
