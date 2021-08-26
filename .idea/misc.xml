@@ -4,6 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/main.xml" value="0.1" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/view_intro_1.xml" value="0.15172101449275363" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/view_intro_2.xml" value="0.15172101449275363" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/view_intro_3.xml" value="0.15172101449275363" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/view_intro_4.xml" value="0.15172101449275363" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/view_intro_5.xml" value="0.15172101449275363" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/view_intro_6.xml" value="0.15172101449275363" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/view_intro_7.xml" value="0.15172101449275363" />
+        <entry key="..\:/Android/AndroidStudioOther/AndUITalk/animator_talk_splash/src/main/res/layout/view_login.xml" value="0.15172101449275363" />
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/canvas_api/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Android/AndroidStudioOther/AndUITalk/event_talk/src/main/res/layout/activity_main.xml" value="0.23645833333333333" />
