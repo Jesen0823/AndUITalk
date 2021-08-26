@@ -1,11 +1,11 @@
 # 事件分发
 
 
-![事件序列](./images/READEME_event-1629882607040.png)
+![事件序列](./images/READEME_event-1629882607040.webp)
 
 
 #### 概览
-![事件分发概括](./images/READEME_event-1629902429259.png)
+![事件分发概括](./images/READEME_event-1629902429259.webp)
 
 
 1. 事件拦截主要方法：
@@ -14,12 +14,12 @@
     * onlnterceptTouchEvent(MotionEvent ev):判断是否拦截事件(只存在于ViewGroup中)
     * onTouchEvent(MotionEvent ev):处理点击事件
 
-![activity事件分发](./images/READEME_event-1629883016135.png)
+![activity事件分发](./images/READEME_event-1629883016135.webp)
 
 
 
-![View事件消费](./images/READEME_event-1629902679429.png)
-![View事件消费](./images/READEME_event-1629902683698.png)
+![View事件消费](./images/READEME_event-1629902679429.webp)
+![View事件消费](./images/READEME_event-1629902683698.webp)
 
 
 
@@ -37,7 +37,5 @@
       * onClick会响应的前提是当前View是可点击的,并且收到了ACTION_DOWN和ACTION_UP的事件,并且受长按事件影响，当长按事件返回true时，onClick不会响应。
       * onLongClick在ACTION_DOWN里判断是否进行响应，要想执行长按事件该View必须是longClickable的并且设置了OnLongClickListener
 
-
 5. 问题
 
-* 
