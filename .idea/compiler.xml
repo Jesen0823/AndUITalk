@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="AndUITalk.animator_talk" target="11" />
+      <module name="AndUITalk.animator_talk_splash" target="11" />
       <module name="AndUITalk.animmator_talk2" target="11" />
       <module name="AndUITalk.app" target="11" />
       <module name="AndUITalk.canvas_api" target="11" />

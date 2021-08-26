@@ -1,4 +1,4 @@
-package com.jesen.animmator_talk2;
+package com.jesen.animator_talk_splash;
 
 import org.junit.Test;
 

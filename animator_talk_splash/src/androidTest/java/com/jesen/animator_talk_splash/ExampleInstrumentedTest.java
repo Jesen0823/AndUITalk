@@ -1,4 +1,4 @@
-package com.jesen.animmator_talk2;
+package com.jesen.animator_talk_splash;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.jesen.animmator_talk2", appContext.getPackageName());
+        assertEquals("com.jesen.animator_talk_splash", appContext.getPackageName());
     }
 }
