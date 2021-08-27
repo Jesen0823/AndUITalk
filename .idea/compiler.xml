@@ -12,6 +12,8 @@
       <module name="AndUITalk.paint_xfermode" target="11" />
       <module name="AndUITalk.path_basi" target="11" />
       <module name="AndUITalk.screen_adapter" target="11" />
+      <module name="AndUITalk.screen_adapter_density" target="11" />
+      <module name="AndUITalk.screen_adapter_percentage" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
