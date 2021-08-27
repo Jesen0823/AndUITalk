@@ -64,7 +64,14 @@
     
 ```
 
-* **修改像素密度：**
+ * **修改像素密度：**
 
-> 修改density,scaleDensity,densityDpi值-直接更改系统内部对于目标尺寸而言的像素密度。
+  > 修改density,scaleDensity,densityDpi值-直接更改系统内部对于目标尺寸而言的像素密度。
 
+* 刘海屏适配
+
+   > 其他手机厂商（华为，小米，oppo，vivo）适配
+     [华为:https://devcenter-test.huawei.com/consumer/cn/devservice/doc/50114](https://devcenter-test.huawei.com/consumer/cn/devservice/doc/50114)
+     [小米:https://dev.mi.com/console/doc/detail?pId=1293](https://dev.mi.com/console/doc/detail?pId=1293)
+     [oppo:https://open.oppomobile.com/service/message/detail?id=61876](https://open.oppomobile.com/service/message/detail?id=61876)
+     [vivo:https://dev.vivo.com.cn/documentCenter/doc/103](https://dev.vivo.com.cn/documentCenter/doc/103)
