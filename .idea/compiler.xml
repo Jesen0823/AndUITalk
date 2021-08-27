@@ -15,6 +15,7 @@
       <module name="AndUITalk.screen_adapter_density" target="11" />
       <module name="AndUITalk.screen_adapter_liuhai" target="11" />
       <module name="AndUITalk.screen_adapter_percentage" target="11" />
+      <module name="AndUITalk.wangyi_cloud" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
