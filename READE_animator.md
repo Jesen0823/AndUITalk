@@ -64,14 +64,76 @@
     
 ```
 
- * **修改像素密度：**
+* **修改像素密度：**
 
-  > 修改density,scaleDensity,densityDpi值-直接更改系统内部对于目标尺寸而言的像素密度。
+> 修改density,scaleDensity,densityDpi值-直接更改系统内部对于目标尺寸而言的像素密度。
 
-* 刘海屏适配
+* 刘海屏适配 对于刘海屏，谷歌提供的适配方案是：
+  可以通过给window设置一个WindowManager.LayoutParams属性，来决定我们的应用是否打算在全屏模式下使用缺口区域。
+  在全屏模式下，如果控件布局想要避开凹槽区留下一个安全区域，就需要有一个方法来获取刘海槽口的高度。
+  谷歌从Android P开始为刘海屏提供支持，目前提供了一个类和三种模式：
+  可以用WindowInsets类的** getDisplayCutout() **
+  这个方法得到cutout的位置和大小。
 
-   > 其他手机厂商（华为，小米，oppo，vivo）适配
-     [华为:https://devcenter-test.huawei.com/consumer/cn/devservice/doc/50114](https://devcenter-test.huawei.com/consumer/cn/devservice/doc/50114)
-     [小米:https://dev.mi.com/console/doc/detail?pId=1293](https://dev.mi.com/console/doc/detail?pId=1293)
-     [oppo:https://open.oppomobile.com/service/message/detail?id=61876](https://open.oppomobile.com/service/message/detail?id=61876)
-     [vivo:https://dev.vivo.com.cn/documentCenter/doc/103](https://dev.vivo.com.cn/documentCenter/doc/103)
+  **Android官方9.0刘海屏适配策略**
+
+       > 如果非全屏模式(有状态栏)，则app不受刘海屏的影响，刘海屏的高就是状态栏的高
+         如果全屏模式，app未适配刘海屏，系统会对界面做特殊处理，竖屏向下移动，横屏向右移动
+
+  ```java
+     // Activity中全屏的设置
+     requestWindowFeature(Window.FEATURE_NO_TITLE);
+     Window window = getWindow();
+     window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+  ```
+
+  刘海屏凹槽选取模式选择，共有三种，默认是LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT：
+
+  ```java
+     WindowManager.LayoutParams params = window.getAttributes();
+          /**
+           *  LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT 全屏模式，内容下移，非全屏不受影响
+           *  LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES 允许内容去延伸进刘海区
+           *  LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER 不允许内容延伸进刘海区
+           */
+          params.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+          window.setAttributes(params);  
+  ```
+
+  * LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT 全屏模式，内容下移，非全屏不受影响
+    ![DEFAULT状态下全屏非全屏对比](./images/READE_animator-1630079933086.png)
+  * LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES 允许内容去延伸进刘海区
+    ![全屏状态下 NEVER沉浸与非沉浸](./images/READE_animator-1630080018944.png)
+  * LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER 不允许内容延伸进刘海区
+    ![SHORT_EDGES_全屏下效果](./images/READE_animator-1630079982421.png)
+
+  **判断是否是刘海屏**
+
+  ```
+    DisplayCutout displayCutout;
+      View rootView = window.getDecorView();
+      WindowInsets insets = null;
+      if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+           insets = rootView.getRootWindowInsets();
+      }
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P && insets != null){
+          displayCutout = insets.getDisplayCutout();
+          if (displayCutout != null){
+              if (displayCutout.getBoundingRects() != null
+                      && displayCutout.getBoundingRects().size() >0
+              && displayCutout.getSafeInsetTop() >0){
+                  Log.d("HHHH","Yes, has cutout.");
+                  return true;
+              }
+          }
+      }
+      return false;  
+  ```
+
+  > 其他手机厂商（华为，小米，oppo，vivo）适配规则
+  > [华为:https://devcenter-test.huawei.com/consumer/cn/devservice/doc/50114](https://devcenter-test.huawei.com/consumer/cn/devservice/doc/50114)
+  > [小米:https://dev.mi.com/console/doc/detail?pId=1293](https://dev.mi.com/console/doc/detail?pId=1293)
+  > [oppo:https://open.oppomobile.com/service/message/detail?id=61876](https://open.oppomobile.com/service/message/detail?id=61876)
+  > [vivo:https://dev.vivo.com.cn/documentCenter/doc/103](https://dev.vivo.com.cn/documentCenter/doc/103)
+
