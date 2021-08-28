@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         UiUtil.getInstance(this.getApplicationContext());
+
         setContentView(R.layout.activity_main);
         tvText3 = findViewById(R.id.tvText3);
         tvText4 = findViewById(R.id.tvText4);
