@@ -7,6 +7,7 @@
       <module name="AndUITalk.animmator_talk2" target="11" />
       <module name="AndUITalk.app" target="11" />
       <module name="AndUITalk.canvas_api" target="11" />
+      <module name="AndUITalk.custom_view" target="11" />
       <module name="AndUITalk.event_talk" target="11" />
       <module name="AndUITalk.paint_colorfilter" target="11" />
       <module name="AndUITalk.paint_xfermode" target="11" />
