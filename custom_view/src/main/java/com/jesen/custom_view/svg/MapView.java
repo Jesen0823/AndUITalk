@@ -29,7 +29,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class MapView  extends View {
-    private int[] colorArray = new int[]{0xFF239BD7, 0xFF30A9E5, 0xFF80CBF1, 0xFFFFFFFF};
+    private int[] colorArray = new int[]{0xFF239BD7, 0xFF30A9E5, 0xFF80CBF1, 0xFF557CE3,0xFF1FAABD,
+            0xFF2A94F1,0xFF1FEABD};
     private Context context;
     private List<ProviceItem> itemList;
     private Paint paint;
@@ -90,7 +91,7 @@ public class MapView  extends View {
                     @SuppressLint("RestrictedApi")
                     Path path = PathParser.createPathFromPathData(pathData);
                     ProviceItem proviceItem = new ProviceItem(path);
-                    proviceItem.setDrawColor(colorArray[i % 4]);
+                    proviceItem.setDrawColor(colorArray[i % 7]);
                     RectF rect = new RectF();
                     path.computeBounds(rect, true);
                     left = left == -1 ? rect.left : Math.min(left, rect.left);
@@ -156,6 +157,5 @@ public class MapView  extends View {
                 }
             }
         }
-
     }
 }

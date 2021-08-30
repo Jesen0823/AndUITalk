@@ -10,21 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndUITalk">
         <activity
-            android:name=".svg.SVGActivity"
+            android:name=".rotationloading.MoveIconActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".customrecyclerview.RecyclerViewActivity"
+            android:name=".svg.SVGActivity"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".customrecyclerview.RecyclerViewActivity"
             android:exported="true"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
