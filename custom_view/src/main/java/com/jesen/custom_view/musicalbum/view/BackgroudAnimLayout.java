@@ -27,11 +27,11 @@ import com.jesen.custom_view.R;
     private int musicPicRes = -1;
 
     public BackgroudAnimLayout(Context context) {
-        super(context );
+        this(context ,null);
     }
 
     public BackgroudAnimLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs,0);
     }
 
     public BackgroudAnimLayout(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -54,10 +54,10 @@ import com.jesen.custom_view.R;
         objectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                Object animatedValue = valueAnimator.getAnimatedValue();
-                int foregroundAlpha = (int)animatedValue*255;
+                float animatedValue = (float) valueAnimator.getAnimatedValue();
+                int foregroundAlpha = (int)(animatedValue * 255);
                 layerDrawable.getDrawable(INDEX_FOREGROUND).setAlpha(foregroundAlpha);
-                setBackground(layerDrawable);
+                BackgroudAnimLayout.this.setBackground(layerDrawable);
             }
         });
         objectAnimator.addListener(new Animator.AnimatorListener() {
@@ -69,7 +69,8 @@ import com.jesen.custom_view.R;
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onAnimationEnd(Animator animator) {
-                layerDrawable.setDrawable(INDEX_BACKGROUND, layerDrawable.getDrawable(INDEX_FOREGROUND));
+                layerDrawable.setDrawable(INDEX_BACKGROUND, layerDrawable.getDrawable(
+                        INDEX_FOREGROUND));
             }
 
             @Override
@@ -86,7 +87,9 @@ import com.jesen.custom_view.R;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void setForeground(Drawable drawable){
-        layerDrawable.setDrawable(INDEX_FOREGROUND,drawable);
+        if (layerDrawable != null) {
+            layerDrawable.setDrawable(INDEX_FOREGROUND, drawable);
+        }
     }
 
     public void  beginAnimation(){

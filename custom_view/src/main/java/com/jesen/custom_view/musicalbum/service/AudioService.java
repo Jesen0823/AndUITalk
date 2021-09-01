@@ -10,14 +10,13 @@ import android.os.IBinder;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.jesen.custom_view.MainActivity;
 import com.jesen.custom_view.musicalbum.MusicActivity;
 import com.jesen.custom_view.musicalbum.model.AudioData;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AudioService extends Service implements MediaPlayer.OnCompletionListener {
+public class AudioService extends Service implements MediaPlayer.OnCompletionListener, AudioReceiver.ReceiverListener {
 
     /*操作指令*/
     public static final String ACTION_OPT_MUSIC_PLAY = "ACTION_OPT_MUSIC_PLAY";
@@ -164,23 +163,19 @@ public class AudioService extends Service implements MediaPlayer.OnCompletionLis
         LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
-    public class AudioReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (action.equals(ACTION_OPT_MUSIC_PLAY)) {
-                play(mCurrentMusicIndex);
-            } else if (action.equals(ACTION_OPT_MUSIC_PAUSE)) {
-                pause();
-            } else if (action.equals(ACTION_OPT_MUSIC_LAST)) {
-                last();
-            } else if (action.equals(ACTION_OPT_MUSIC_NEXT)) {
-                next();
-            } else if (action.equals(ACTION_OPT_MUSIC_SEEK_TO)) {
-                seekTo(intent);
-            }
+    @Override
+    public void onReceiver(Intent intent) {
+        String action = intent.getAction();
+        if (action.equals(ACTION_OPT_MUSIC_PLAY)) {
+            play(mCurrentMusicIndex);
+        } else if (action.equals(ACTION_OPT_MUSIC_PAUSE)) {
+            pause();
+        } else if (action.equals(ACTION_OPT_MUSIC_LAST)) {
+            last();
+        } else if (action.equals(ACTION_OPT_MUSIC_NEXT)) {
+            next();
+        } else if (action.equals(ACTION_OPT_MUSIC_SEEK_TO)) {
+            seekTo(intent);
         }
     }
-
 }

@@ -31,6 +31,7 @@ import android.widget.TextView;
 
 import com.jesen.custom_view.R;
 import com.jesen.custom_view.musicalbum.model.AudioData;
+import com.jesen.custom_view.musicalbum.service.AudioReceiver;
 import com.jesen.custom_view.musicalbum.service.AudioService;
 import com.jesen.custom_view.musicalbum.service.AudioService.*;
 import com.jesen.custom_view.musicalbum.utils.DisplayUtil;
@@ -66,7 +67,7 @@ public class MusicActivity extends AppCompatActivity implements AlbumView.IPlayI
         }
     };
 
-    private AudioReceiver mMusicReceiver = onew AudioReceiver();
+    private AudioReceiver mMusicReceiver = new AudioReceiver();
 
     private List<AudioData> mAudioDatas = new ArrayList<>();
 
