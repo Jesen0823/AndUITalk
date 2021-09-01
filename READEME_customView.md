@@ -158,6 +158,12 @@ VLayout特点：
    * 适合列表中嵌套列表(如RecyclerView嵌套RecyclerView)
    * 列表，网格，瀑布流混合布局
 
+###  唱片效果
+
+
+   * 图层叠加LayerDrawable
+     叠加技术︰LayerDrawable 对应的XML标签是<layer-list>，它表示一种层次化的Drawable 集合
+     ，通过将不同的 Drawable 放置在不同的层上面从而达到一种叠加后的效果。
 
 
 

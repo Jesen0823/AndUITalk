@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MarqueeView">
+        <attr name="mvAnimDuration" format="integer" />
+        <attr name="mvDirection" format="string" />
+        <attr name="mvInterval" format="integer" />
+        <attr name="mvSingleLine" format="boolean" />
+        <attr name="mvTextColor" format="color" />
+        <attr name="mvTextSize" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="RippleAnimationView">
+        <attr name="ripple_anim_color" format="color" />
+        <attr name="ripple_anim_type" format="enum">
+            <enum name="fillRipple" value="0" />
+            <enum name="strokeRipple" value="1" />
+        </attr>
+        <attr name="radius" format="integer" />
+        <attr name="strokWidth" format="integer" />
+        <attr name="rippleNum" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="PayResultView">
+        <attr name="paying_color" format="color"/>
+        <attr name="paying_stroke" format="integer"/>
+        <attr name="paying_dur" format="integer"/>
+        <attr name="result_dur" format="integer"/>
+    </declare-styleable>
+</resources>

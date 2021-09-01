@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="blue_e">#FF1AAFEE</color>
+    <color name="rippleColor">#C0362E</color>
 </resources>
