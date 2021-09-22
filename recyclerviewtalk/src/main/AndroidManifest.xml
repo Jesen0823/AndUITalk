@@ -10,6 +10,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndUITalk">
         <activity
+            android:name=".activity.OperateItemTouchHelperActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.GridItemTouchHelperActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.LinearItemTouchHelperActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.RecycledSecondRemouldActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.RecycledFirstRemouldActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.CustomRecycledLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.CustomLayoutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.DiffItemActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.StaggeredActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.GridActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.LinearActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -16,12 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="LinearLayoutManager" />
 
         <Button
             android:id="@+id/grid_activity_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAllCaps="false"
             android:padding="10dp"
             android:text="GridLayoutManager" />
 
@@ -30,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="StaggeredGridLayoutManager" />
 
         <Button
@@ -37,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="加载不同item类型" />
 
 
@@ -45,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="CustomLayoutManager" />
 
         <Button
@@ -52,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="回收复用的LayoutManager" />
 
         <Button
@@ -59,6 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="第一次改造LayoutManager" />
 
         <Button
@@ -66,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="第二次改造LayoutManager" />
 
         <Button
@@ -73,6 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="垂直列表ItemTouchHelper" />
 
         <Button
@@ -80,6 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="GridItemTo布局的ItemTouchHelper" />
 
         <Button
@@ -87,6 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:textAllCaps="false"
             android:text="带滑动按钮的列表" />
 
         <Button
@@ -101,6 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SnapHelper按钮"
+            android:textAllCaps="false"
             android:padding="10dp"/>
     </LinearLayout>
 
