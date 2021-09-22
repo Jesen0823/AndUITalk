@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.jesen.recyclerviewtalk.activity.CoverFlowActivity;
+import com.jesen.recyclerviewtalk.activity.CoverFlowNewActivity;
 import com.jesen.recyclerviewtalk.activity.CustomLayoutActivity;
 import com.jesen.recyclerviewtalk.activity.CustomRecycledLayoutActivity;
 import com.jesen.recyclerviewtalk.activity.DiffItemActivity;
@@ -19,7 +21,11 @@ import com.jesen.recyclerviewtalk.activity.RecycledFirstRemouldActivity;
 import com.jesen.recyclerviewtalk.activity.RecycledSecondRemouldActivity;
 import com.jesen.recyclerviewtalk.activity.StaggeredActivity;
 
-
+/**
+ *  ┏━━━━━━━━━━━━━━━┑┌────┒
+ *  ┃ RecyclerView主页
+ *  ┖───────────────┘┕━━━━┛
+ * */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -133,6 +139,40 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+
+        findViewById(R.id.cover_flow_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CoverFlowActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.cover_flow_btn_new).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CoverFlowNewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.cover_flow_btn_3d).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CoverFlowActivity.class);
+                intent.putExtra("style",true);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.cover_flow_btn_new_3d).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CoverFlowNewActivity.class);
+                intent.putExtra("style",true);
+                startActivity(intent);
             }
         });
 
