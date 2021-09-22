@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndUITalk">
         <activity
+            android:name=".snap.PagerSnapActivity"
+            android:exported="true" />
+        <activity
+            android:name=".snap.SnapHelperActivity"
+            android:exported="true" />
+        <activity
             android:name=".qqdelete.QQDeleteActivity"
             android:exported="true" />
         <activity

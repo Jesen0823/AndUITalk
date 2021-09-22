@@ -111,9 +111,26 @@
             android:id="@+id/snap_helper_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SnapHelper按钮"
+            android:text="SnapHelper使用"
             android:textAllCaps="false"
             android:padding="20dp"/>
+
+        <Button
+            android:id="@+id/start_snap_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="StartSnap使用"
+            android:textAllCaps="false"
+            android:padding="20dp"/>
+
+        <Button
+            android:id="@+id/snap_helper_vertical_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="全屏PagerSnap使用"
+            android:textAllCaps="false"
+            android:padding="20dp"/>
+
         <Button
             android:id="@+id/cover_flow_btn"
             android:layout_width="match_parent"

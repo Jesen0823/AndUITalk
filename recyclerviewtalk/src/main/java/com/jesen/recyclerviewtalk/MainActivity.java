@@ -21,6 +21,8 @@ import com.jesen.recyclerviewtalk.activity.RecycledFirstRemouldActivity;
 import com.jesen.recyclerviewtalk.activity.RecycledSecondRemouldActivity;
 import com.jesen.recyclerviewtalk.activity.StaggeredActivity;
 import com.jesen.recyclerviewtalk.qqdelete.QQDeleteActivity;
+import com.jesen.recyclerviewtalk.snap.PagerSnapActivity;
+import com.jesen.recyclerviewtalk.snap.SnapHelperActivity;
 
 /**
  *  ┏━━━━━━━━━━━━━━━┑┌────┒
@@ -140,7 +142,26 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.snap_helper_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SnapHelperActivity.class);
+                intent.putExtra("snapType","normal");
+                startActivity(intent);
+            }
+        });
 
+        findViewById(R.id.start_snap_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SnapHelperActivity.class);
+                intent.putExtra("snapType","start");
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.snap_helper_vertical_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PagerSnapActivity.class);
+                startActivity(intent);
             }
         });
 
