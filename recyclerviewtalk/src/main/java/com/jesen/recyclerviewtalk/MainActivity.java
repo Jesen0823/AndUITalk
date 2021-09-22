@@ -20,6 +20,7 @@ import com.jesen.recyclerviewtalk.activity.OperateItemTouchHelperActivity;
 import com.jesen.recyclerviewtalk.activity.RecycledFirstRemouldActivity;
 import com.jesen.recyclerviewtalk.activity.RecycledSecondRemouldActivity;
 import com.jesen.recyclerviewtalk.activity.StaggeredActivity;
+import com.jesen.recyclerviewtalk.qqdelete.QQDeleteActivity;
 
 /**
  *  ┏━━━━━━━━━━━━━━━┑┌────┒
@@ -131,7 +132,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_qq_delete).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, QQDeleteActivity.class);
+                startActivity(intent);
             }
         });
 

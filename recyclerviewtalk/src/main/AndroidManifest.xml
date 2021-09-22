@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndUITalk">
         <activity
+            android:name=".qqdelete.QQDeleteActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.CoverFlowNewActivity"
             android:exported="true" />
         <activity
