@@ -7,10 +7,24 @@
 
    共有18种模式：
 
-   Mode.CLEAR Mode.SRC_OVER Mode.DST_IN Mode.SRC_ATOP Mode.DARKEN
-   Mode.SCREEN Mode.SRC Mode.DST_OVER Mode.SRC_OUT Mode.DST_ATOP
-   Mode.LIGHTEN Mode.OVERLAY Mode.DST Mode.SRC_IN Mode.DST_OUT Mode.XOR
-   Mode.MULTIPLY Mode.ADD
+   * Mode.CLEAR 
+   * Mode.SRC_OVER 
+   * Mode.DST_IN 
+   * Mode.SRC_ATOP 
+   * Mode.DARKEN
+   * Mode.SCREEN 
+   * Mode.SRC 
+   * Mode.DST_OVER 
+   * Mode.SRC_OUT 
+   * Mode.DST_ATOP
+   * Mode.LIGHTEN 
+   * Mode.OVERLAY 
+   * Mode.DST 
+   * Mode.SRC_IN 
+   * Mode.DST_OUT 
+   * Mode.XOR
+   * Mode.MULTIPLY 
+   * Mode.ADD
 
 
 2. 离屏绘制
@@ -19,7 +33,7 @@
    * Canvas.saveLayer()可以做短时的离屏缓冲，在绘制之前保存，绘制之后恢复restoreToCount:
 
      ```java
-     int saveld=canvas. save Layer(0, 0,width,height, Canvas.ALL_SAVE_FLAG);
+     int saveld=canvas.saveLayer(0, 0,width,height, Canvas.ALL_SAVE_FLAG);
 
      Canvas.drawBitmap(rectBitmap, 0, 0, paint);//画方
      Paint.setXfermode(xfermode);//设置Xferm,

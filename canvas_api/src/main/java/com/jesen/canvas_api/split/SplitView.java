@@ -19,6 +19,9 @@ import java.util.List;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.GlobalScope;
 
+/**
+ * 粒子爆炸效果
+ * */
 public class SplitView extends View {
 
     private Paint mPaint;

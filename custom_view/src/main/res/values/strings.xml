@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">custom_view</string>
+    <array name="video_score_bottom_array">
+        <item>烂片</item>
+        <item>较差</item>
+        <item>一般</item>
+        <item>较好</item>
+        <item>超棒</item>
+    </array>
 </resources>

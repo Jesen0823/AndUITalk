@@ -6,4 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.jesen.custom_view.SimpleRatingBar
+        android:id="@+id/video_srb_new_score_current_scorer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srb_borderColor="@android:color/transparent"
+        app:srb_bottomTextColor="#999999"
+        app:srb_fillColor="@android:color/holo_purple"
+        app:srb_gravity="left"
+        app:srb_isIndicator="true"
+        app:srb_numberOfStars="5"
+        app:srb_rating="3.5"
+        app:srb_starBackgroundColor="@android:color/darker_gray"
+        app:srb_starCornerRadius="6"
+        app:srb_starSize="16dp"
+        app:srb_stepSize="0.5"/>
+
+    <com.jesen.custom_view.SimpleRatingBar
+        android:id="@+id/video_srb_new_score_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/video_score_bottom_array"
+        android:translationY="-16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/video_tv_new_score_my_score"
+        app:srb_borderColor="@android:color/transparent"
+        app:srb_bottomTextColor="#999999"
+        app:srb_fillColor="@android:color/holo_orange_light"
+        app:srb_gravity="left"
+        app:srb_numberOfStars="5"
+        app:srb_starBackgroundColor="@android:color/darker_gray"
+        app:srb_starCornerRadius="6"
+        app:srb_starSize="40dp"
+        app:srb_stepSize="0.5"/>
+
+    <TextView
+        android:id="@+id/video_tv_new_score_my_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:text="我的评分"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/video_srb_new_score_current_scorer" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -94,15 +94,11 @@ mPaint = new Paint();
        * 参数： cx cy：扫描的中心 color0：扫描的起始颜色 color1:扫描的终止颜色
        * 使用：
 
-         ```
-         ```
-
+       
+       ```java
        mShader=new
        SweepGradient(250,250,Color.RED,Color.GREEN);mPaint.setShader(mShader);
        canvas.drawCircle(250,250,250, mPaint);
-
-       ```
-
        ```
      * BitmapShader:位图渲染
        * 构造方法： BitmapShader(Bitmap bitmap, Shader.TileMode tilex,
@@ -114,9 +110,9 @@ mPaint = new Paint();
        * 使用： mShader = new
          BitmapShader(mBitmap,Shader.TileMode.CLAMP,Shader.TileMode.CLAMP);mPaint.setShader(mShader);
          canvas.drawCircle(250, 250,250, mPaint);
-
+     
      * **ComposeShader**:组合渲染，`例如LinearGradient+ BitmapShader`
-
+     
      ```java
      /**
         * 组合渲染，
@@ -132,15 +128,15 @@ mPaint = new Paint();
        mPaint.setShader(mShader);
        canvas.drawCircle(250, 250, 250, mPaint); 
      ```
-
+     
    * setColorFilter(ColorFilter colorFilter)
      设置颜色过滤。一般使用ColorFilter三个子类
-
+   
      * LightingColorFilter： 光照效果类：
        * 构造方法 Lighting Color Filter(int mul, int add)
          * 参数:
            mul和add都是和颜色值格式相同的int值,其中mul用来和目标像素相乘,add用来和目标像素相加:
-
+   
            R`= R * mul.R/ 0xff + add.R G`= G * mul.G/ 0Xff + add.G B`= B
            \* mul.B/ 0xff+ add.B
          * 使用
@@ -149,53 +145,55 @@ mPaint = new Paint();
            ColorFilter lighting = new LightingColorFilter(oxooffff, 0X000000);
            paint.setColorFilter(lighting);
            canvas.drawBitmap(bitmap, 0,0, paint);
-
+           
                   //红色去除掉
            //  LightingColorFilter lighting = new LightingColorFilter(0x00ffff,0x000000);
            //  mPaint.setColorFilter(lighting);
            //  canvas.drawBitmap(mBitmap, 0,0, mPaint);
-
+           
            // 原始图片效果
            //  LightingColorFilter lighting = new LightingColorFilter(0xffffff,0x000000);
            //  mPaint.setColorFilter(lighting);
            //  canvas.drawBitmap(mBitmap, 0,0, mPaint);
-
+           
            //  绿色更亮
            //  LightingColorFilter lighting = new LightingColorFilter(0xffffff,0x003000);
            //  mPaint.setColorFilter(lighting);
            //  canvas.drawBitmap(mBitmap, 0,0, mPaint);
-
+           
            //  PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.DARKEN);
            //   mPaint.setColorFilter(porterDuffColorFilter);
            //   canvas.drawBitmap(mBitmap, 100, 0, mPaint);
            ```
-
+           
+           
+       
      * PorterDuffColorFilter：指定一个颜色和一种PorterDuff.Mode与绘制对象进行合成
        * PorterDuffColorFilter构造方法: PorterDuffColorFilter(int color,
          PorterDuff.Mode mode)
        * 参数:
          color,具体的颜色值，例如Color.REDmode,指定PorterDuff.Mode混合模式
        * 使用:
-
+     
            ```java
            PorterDuffColorFilter porterDuffColorFilter = new
            PorterDuffColorFilter(Color.RED, PorterDuff.Mode.DARKEN);paint.setColorFilter(porterDuffColorFilter);
            canvas.drawBitmap(mBitmap,100, 0, paint);
            ```
-
+     
      * ColorMatrixColorFilter:使用一个ColorMatrix 来对颜色进行处理
        * ColorMatrixColorFilter构造方法: ColorMatrixColorFilter(float[]
          colorMatrix);
        * 参数: colorMatrix矩阵数组
        * 使用:
-
+     
        ```java
          //黑白
          public static final float colormatrix_heibai[] = {
-             0.8f,1.6f,0.2f,0,-163.9f,
-             8.8f,1.6f,8.2f,0,-163.9f
-             ,8.8f,1.6f,0.2f,0,-163.9f,
-             0, 0, 0, 1.0f,0
+             0.8f,1.6f,0.2f,0,-163.9f, //r
+             8.8f,1.6f,8.2f,0,-163.9f, //g  
+             8.8f,1.6f,0.2f,0,-163.9f, //b
+             0, 0, 0, 1.0f,0           //alpha
          };
          //怀旧
          public static final float coLormatrix_huajiu[] = {
@@ -224,12 +222,19 @@ mPaint = new Paint();
               0,0,1,0,0, //blue
               0,0,0,1,0 //alpha
            };
-
+       
            mColorMatrixColorFilter = new ColorMatrixColorFilter(colorMatrix);
+       
+           // 另一种等效的API：
+           //  mColorMatrixColorFilter = new ColorMatrix();
+           // 亮度调节
+           //  mColorMatrixColorFilter.setScale(1,2,1,1);
+           // 饱和度调节
+           // mColorMatrixColorFilter.setSaturation(2);
            mPaint.setColorFilter(mColorMatrixColorFilter);
            canvas.drawBitmap(mBitmap,100,0, mPaint);
        ```
-
+       
        效果如下： ![滤镜效果](./images/README_Paint-1629819196181.webp)
 
 
