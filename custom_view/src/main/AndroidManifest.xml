@@ -21,28 +21,36 @@
         <activity
             android:name=".musicalbum.MusicActivity"
             android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".taobaovlay.TaobaoActivity"
-            android:exported="true" />
-        <activity
-            android:name=".rotationloading.MoveIconActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".svg.SVGActivity"
-            android:exported="true" />
-        <activity
-            android:name=".customrecyclerview.RecyclerViewActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".taobaovlay.TaobaoActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".rotationloading.MoveIconActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".svg.SVGActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".customrecyclerview.RecyclerViewActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
+
         </activity>
     </application>
 
