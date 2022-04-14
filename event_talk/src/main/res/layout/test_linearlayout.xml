@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jesen.event_talk.googleevent.MLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jesen.event_talk.googleevent.MButton
+        android:id="@+id/testBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:text="这是一个Button"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="30dp"/>
+</com.jesen.event_talk.googleevent.MLinearLayout>

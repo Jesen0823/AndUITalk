@@ -10,16 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndUITalk">
         <activity
-            android:name=".pathmeasure.LoadingActivity"
-            android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".ripples.RippleActivity"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".musicalbum.MusicActivity"
+            android:name=".other.customcompnentview.CombinationActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,30 +19,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".taobaovlay.TaobaoActivity"
-            android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".rotationloading.MoveIconActivity"
+            android:name=".other.customsingleview.OherCustomActivity"
             android:exported="true">
 
         </activity>
         <activity
+            android:name=".pathmeasure.LoadingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ripples.RippleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".musicalbum.MusicActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".taobaovlay.TaobaoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".rotationloading.MoveIconActivity"
+            android:exported="true" />
+        <activity
             android:name=".svg.SVGActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".customrecyclerview.RecyclerViewActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

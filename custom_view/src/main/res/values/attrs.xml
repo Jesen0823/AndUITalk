@@ -55,4 +55,13 @@
             <enum name="right" value="1" />
         </attr>
     </declare-styleable>
+    <declare-styleable name="RectView">
+        <attr name="rect_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="CombTitleBar">
+        <attr name="icon_tint" format="color"/>
+        <attr name="title_color" format="color"/>
+        <attr name="title_background_color" format="color"/>
+        <attr name="title_text" format="string"/>
+    </declare-styleable>
 </resources>
