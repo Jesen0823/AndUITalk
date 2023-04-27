@@ -13,16 +13,14 @@ public class CustomLayoutManagerRecyclered extends RecyclerView.LayoutManager {
 
     private int mSumDy = 0;
     private int mTotalHeight = 0;
+    private int mItemWidth, mItemHeight;
+    private SparseArray<Rect> mItemRects = new SparseArray<>();
 
     @Override
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
         return new RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT,
                 RecyclerView.LayoutParams.WRAP_CONTENT);
     }
-
-    private int mItemWidth, mItemHeight;
-    private SparseArray<Rect> mItemRects = new SparseArray<>();
-    ;
 
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {

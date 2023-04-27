@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:padding="20dp"
             android:textAllCaps="false"
-            android:text="回收复用的LayoutManager" />
+            android:text="回收复用的CustomLayoutManager" />
 
         <Button
             android:id="@+id/first_remould_recycled_activity_btn"

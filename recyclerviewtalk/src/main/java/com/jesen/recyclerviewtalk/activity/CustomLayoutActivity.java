@@ -21,7 +21,7 @@ public class CustomLayoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_linear);
 
         generateDatas();
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.linear_recycler_view);
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.rc_linear_recycler_view);
 
         mRecyclerView.setLayoutManager(new CustomLayoutManager());
 
