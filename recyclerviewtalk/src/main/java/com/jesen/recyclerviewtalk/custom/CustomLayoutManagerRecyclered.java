@@ -13,8 +13,7 @@ public class CustomLayoutManagerRecyclered extends RecyclerView.LayoutManager {
 
     private int mSumDy = 0;
     private int mTotalHeight = 0;
-    private int mItemWidth, mItemHeight;
-    private SparseArray<Rect> mItemRects = new SparseArray<>();
+    private final SparseArray<Rect> mItemRects = new SparseArray<>();
 
     @Override
     public RecyclerView.LayoutParams generateDefaultLayoutParams() {
@@ -33,8 +32,8 @@ public class CustomLayoutManagerRecyclered extends RecyclerView.LayoutManager {
         //将item的位置存储起来
         View childView = recycler.getViewForPosition(0);
         measureChildWithMargins(childView, 0, 0);
-        mItemWidth = getDecoratedMeasuredWidth(childView);
-        mItemHeight = getDecoratedMeasuredHeight(childView);
+        int mItemWidth = getDecoratedMeasuredWidth(childView);
+        int mItemHeight = getDecoratedMeasuredHeight(childView);
 
         int visibleCount = getVerticalSpace() / mItemHeight;
 
@@ -79,7 +78,7 @@ public class CustomLayoutManagerRecyclered extends RecyclerView.LayoutManager {
         }
 
         int travel = dy;
-//如果滑动到最顶部
+        //如果滑动到最顶部
         if (mSumDy + dy < 0) {
             travel = -mSumDy;
         } else if (mSumDy + dy > mTotalHeight - getVerticalSpace()) {
@@ -90,21 +89,21 @@ public class CustomLayoutManagerRecyclered extends RecyclerView.LayoutManager {
         //回收越界子View
         for (int i = getChildCount() - 1; i >= 0; i--) {
             View child = getChildAt(i);
-            if (travel > 0) {//需要回收当前屏幕，上越界的View
-                if (getDecoratedBottom(child) - travel < 0) {
-                    removeAndRecycleView(child, recycler);
-                    continue;
-                }
-            } else if (travel < 0) {//回收当前屏幕，下越界的View
-                if (getDecoratedTop(child) - travel > getHeight() - getPaddingBottom()) {
-                    removeAndRecycleView(child, recycler);
-                    continue;
+            if (child !=null){
+                if (travel > 0) {//需要回收当前屏幕，上越界的View
+                    if (getDecoratedBottom(child) - travel < 0) {
+                        removeAndRecycleView(child, recycler);
+                    }
+                } else if (travel < 0) {//回收当前屏幕，下越界的View
+                    if (getDecoratedTop(child) - travel > getHeight() - getPaddingBottom()) {
+                        removeAndRecycleView(child, recycler);
+                    }
                 }
             }
         }
 
         Rect visibleRect = getVisibleArea(travel);
-//布局子View阶段
+        //布局子View阶段
         if (travel >= 0) {
             View lastView = getChildAt(getChildCount() - 1);
             int minPos = getPosition(lastView) + 1;//从最后一个View+1开始吧

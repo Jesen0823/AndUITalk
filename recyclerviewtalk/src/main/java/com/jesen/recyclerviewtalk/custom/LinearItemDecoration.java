@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  * 自定义Item装饰器
  * 每个Item装饰一个圆
- * */
+ */
 public class LinearItemDecoration extends RecyclerView.ItemDecoration {
 
-    private Paint mPaint;
+    private final Paint mPaint;
 
-    public LinearItemDecoration(){
+    public LinearItemDecoration() {
         mPaint = new Paint();
         mPaint.setColor(Color.BLUE);
         mPaint.setStyle(Paint.Style.STROKE);
@@ -25,6 +25,7 @@ public class LinearItemDecoration extends RecyclerView.ItemDecoration {
         mPaint.setAntiAlias(true);
     }
 
+    // Canvas是getItemOffsets()函数指定的区域的画布
     @Override
     public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDraw(c, parent, state);
@@ -33,17 +34,18 @@ public class LinearItemDecoration extends RecyclerView.ItemDecoration {
 
         for (int i = 0; i < childCount; i++) {
             View child = parent.getChildAt(i);
+            assert manager != null;
             int left = manager.getLeftDecorationWidth(child);
-            int cx = left/2;
-            int cy = child.getTop() + child.getHeight()/2;
-            c.drawCircle(cx,cy, 20, mPaint);
+            int cx = left / 2;
+            int cy = child.getTop() + child.getHeight() / 2;
+            c.drawCircle(cx, cy, 20, mPaint);
         }
     }
 
     @Override
     public void onDrawOver(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDrawOver(c, parent, state);
-        c.drawCircle(400,400,200, mPaint);
+        c.drawCircle(400, 400, 200, mPaint);
     }
 
     @Override

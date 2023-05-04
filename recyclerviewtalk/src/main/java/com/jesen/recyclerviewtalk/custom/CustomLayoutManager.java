@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
  * 自定义LayoutManager
  * */
 public class CustomLayoutManager extends RecyclerView.LayoutManager {
-
     private int mSumDy = 0;
     private int mTotalHeight = 0;
 
@@ -19,20 +18,21 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
 
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
-        // 垂直方向偏移量
+        //定义竖直方向的偏移量
         int offsetY = 0;
         for (int i = 0; i < getItemCount(); i++) {
             View view = recycler.getViewForPosition(i);
             addView(view);
-            measureChildWithMargins(view,0,0);
+            measureChildWithMargins(view, 0, 0);
             int width = getDecoratedMeasuredWidth(view);
-            int height = getBottomDecorationHeight(view);
-            layoutDecorated(view,0, offsetY,width,offsetY+height);
+            int height = getDecoratedMeasuredHeight(view);
+            layoutDecorated(view, 0, offsetY, width, offsetY + height);
             offsetY += height;
         }
-        // 循环完，如果所有子view 没有填满RecyclerView高度
-        // 则将总高度设置为RecyclerView高度
-        mTotalHeight = Math.max(offsetY,getVerticalSpace());
+
+        //如果所有子View的高度和没有填满RecyclerView的高度，
+        // 则将高度设置为RecyclerView的高度
+        mTotalHeight = Math.max(offsetY, getVerticalSpace());
     }
 
     private int getVerticalSpace() {
@@ -41,7 +41,6 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
 
     @Override
     public boolean canScrollVertically() {
-        // 表示垂直方向允许滑动
         return true;
     }
 

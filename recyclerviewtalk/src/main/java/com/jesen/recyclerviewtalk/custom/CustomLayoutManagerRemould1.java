@@ -78,7 +78,7 @@ public class CustomLayoutManagerRemould1 extends RecyclerView.LayoutManager {
         }
 
         int travel = dy;
-//如果滑动到最顶部
+        //如果滑动到最顶部
         if (mSumDy + dy < 0) {
             travel = -mSumDy;
         } else if (mSumDy + dy > mTotalHeight - getVerticalSpace()) {

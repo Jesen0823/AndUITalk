@@ -1,11 +1,14 @@
 package com.jesen.recyclerviewtalk.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jesen.recyclerviewtalk.R;
@@ -14,8 +17,9 @@ import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private Context mContext;
-    private ArrayList<String> mDatas;
+    private static final String TAG = "LinearActivity|RecyclerAdapter";
+    private final Context mContext;
+    private final ArrayList<String> mDatas;
     private int mCreatedHolder=0;
 
     public RecyclerAdapter(Context context, ArrayList<String> datas) {
@@ -24,16 +28,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mCreatedHolder++;
-//        Log.d("qijian", "onCreateViewHolder num:"+mCreatedHolder);
+        Log.d(TAG, "onCreateViewHolder num:"+mCreatedHolder);
         LayoutInflater inflater = LayoutInflater.from(mContext);
         return new NormalHolder(inflater.inflate(R.layout.item_layout, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-//        Log.d("qijian", "onBindViewHolder");
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        Log.d(TAG, "onBindViewHolder");
         NormalHolder normalHolder = (NormalHolder) holder;
         normalHolder.mTV.setText(mDatas.get(position));
     }
@@ -51,13 +55,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public NormalHolder(View itemView) {
             super(itemView);
 
-            mTV = (TextView) itemView.findViewById(R.id.item_tv);
-            mTV.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(mContext, mTV.getText(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            mTV = itemView.findViewById(R.id.item_tv);
+            mTV.setOnClickListener(v -> Toast.makeText(mContext, mTV.getText(), Toast.LENGTH_SHORT).show());
         }
     }
 }

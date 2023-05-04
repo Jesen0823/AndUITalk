@@ -4,12 +4,10 @@ import android.graphics.Canvas;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -18,8 +16,8 @@ import java.util.Collections;
 public class MyItemTouchHelperCallBack extends ItemTouchHelper.Callback {
     private static final String TAG = "MyTouchHelperCallBack";
 
-    private ArrayList<String> mDatas;
-    private RecyclerView.Adapter<RecyclerView.ViewHolder> mAdapter;
+    private final ArrayList<String> mDatas;
+    private final RecyclerView.Adapter<RecyclerView.ViewHolder> mAdapter;
 
     public MyItemTouchHelperCallBack(ArrayList<String> datas, RecyclerView.Adapter<RecyclerView.ViewHolder> adapter) {
         mDatas = datas;
@@ -28,7 +26,7 @@ public class MyItemTouchHelperCallBack extends ItemTouchHelper.Callback {
 
 
     @Override
-    public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+    public int getMovementFlags(RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
         // 如果你不想上下拖动，可以将 dragFlags = 0
         int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
 
@@ -65,8 +63,8 @@ public class MyItemTouchHelperCallBack extends ItemTouchHelper.Callback {
 
         //不管是拖拽或是侧滑，背景色都要变化
         if (actionState == ItemTouchHelper.ACTION_STATE_IDLE) {
-            /*int bgColor = viewHolder.itemView.getContext().getResources().getColor(android.R.color.holo_green_dark);
-            viewHolder.itemView.setBackgroundColor(bgColor);*/
+            int bgColor = viewHolder.itemView.getContext().getResources().getColor(android.R.color.holo_green_dark);
+            viewHolder.itemView.setBackgroundColor(bgColor);
         } else if (actionState == ItemTouchHelper.ACTION_STATE_SWIPE) {
             int bgColor = viewHolder.itemView.getContext().getResources().getColor(android.R.color.holo_orange_light);
             viewHolder.itemView.setBackgroundColor(bgColor);
@@ -78,9 +76,9 @@ public class MyItemTouchHelperCallBack extends ItemTouchHelper.Callback {
     }
 
     @Override
-    public void onChildDraw(Canvas c,
-                            RecyclerView recyclerView,
-                            RecyclerView.ViewHolder viewHolder,
+    public void onChildDraw(@NonNull Canvas c,
+                            @NonNull RecyclerView recyclerView,
+                            @NonNull RecyclerView.ViewHolder viewHolder,
                             float dX,
                             float dY,
                             int actionState,
@@ -99,10 +97,9 @@ public class MyItemTouchHelperCallBack extends ItemTouchHelper.Callback {
      * 当item的交互动画结束时触发
      *
      * @param recyclerView
-     * @param viewHolder
      */
     @Override
-    public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+    public void clearView(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
         super.clearView(recyclerView, viewHolder);
         viewHolder.itemView.setBackgroundColor(viewHolder.itemView.getContext().getResources().getColor(android.R.color.holo_green_dark));
         viewHolder.itemView.setAlpha(1);

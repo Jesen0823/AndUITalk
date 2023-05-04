@@ -30,6 +30,12 @@ public class LinearItemDecoration2 extends RecyclerView.ItemDecoration {
         mMedalMap = BitmapFactory.decodeResource(context.getResources(), R.drawable.icon_hot_topic);
     }
 
+    // Canvas是getItemOffsets()函数指定的区域的画布
+    @Override
+    public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+        super.onDraw(c, parent, state);
+    }
+
     @Override
     public void onDrawOver(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDrawOver(c, parent, state);
@@ -55,6 +61,7 @@ public class LinearItemDecoration2 extends RecyclerView.ItemDecoration {
         c.drawRect(0, 0, parent.getWidth(), tmp.getHeight() * 3, mPaint);
     }
 
+    // 在item四周撑开间距，保存在outRect
     @Override
     public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);

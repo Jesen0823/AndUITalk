@@ -1,10 +1,10 @@
 package com.jesen.recyclerviewtalk.activity;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
-import android.os.Bundle;
 
 import com.jesen.recyclerviewtalk.R;
 import com.jesen.recyclerviewtalk.adapter.StaggeredRecyclerAdapter;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * */
 public class StaggeredActivity extends AppCompatActivity {
 
-    private ArrayList<String> mDatas = new ArrayList<>();
+    private final ArrayList<String> mDatas = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,9 @@ public class StaggeredActivity extends AppCompatActivity {
         setContentView(R.layout.activity_staggered);
 
         generateDatas();
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.stagger_recycler_view);
+        RecyclerView mRecyclerView = findViewById(R.id.stagger_recycler_view);
         //瀑布流布局
-        StaggeredGridLayoutManager staggeredManager = new StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager staggeredManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(staggeredManager);
 
         StaggeredRecyclerAdapter adapter = new StaggeredRecyclerAdapter(this, mDatas);

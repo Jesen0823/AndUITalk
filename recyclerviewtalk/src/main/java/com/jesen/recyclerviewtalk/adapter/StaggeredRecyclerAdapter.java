@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 public class StaggeredRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private Context mContext;
-    private ArrayList<String> mDatas;
-    private ArrayList<Integer> mHeights = new ArrayList<>();
+    private final Context mContext;
+    private final ArrayList<String> mDatas;
+    private final ArrayList<Integer> mHeights = new ArrayList<>();
 
     public StaggeredRecyclerAdapter(Context context, ArrayList<String> datas) {
         mContext = context;
@@ -29,7 +29,6 @@ public class StaggeredRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.
                 mHeights.add(getRandomHeight());
             }
         }
-
     }
 
     @NonNull
@@ -54,27 +53,22 @@ public class StaggeredRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.
         return mDatas.size();
     }
 
-    private int getRandomHeight(){
-        int randomHeight = 0;
+    private int getRandomHeight() {
+        int randomHeight;
         do {
-            randomHeight = (int)(Math.random() * 300);
-        }while (randomHeight ==0);
+            randomHeight = (int) (Math.random() * 600);
+        } while (randomHeight < 20);
         return randomHeight;
     }
 
-    public class NormalHolder extends RecyclerView.ViewHolder{
+    public class NormalHolder extends RecyclerView.ViewHolder {
         public TextView mTv;
 
-        public NormalHolder(View itemView){
+        public NormalHolder(View itemView) {
             super(itemView);
 
             mTv = itemView.findViewById(R.id.item_tv);
-            mTv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(mContext, mTv.getText(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            mTv.setOnClickListener(view -> Toast.makeText(mContext, mTv.getText(), Toast.LENGTH_SHORT).show());
         }
     }
 }
